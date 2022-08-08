@@ -5,7 +5,7 @@
 }
 
 :root {
-    --color-1: #88f;
+    --color-1: #8cf;
     --color-2: #eee;
 }
 
@@ -19,7 +19,7 @@ body {
 #main {
     background-color: var(--color-2);
     border-radius: 4rem;
-    box-shadow: 0 0 1rem #000;
+    box-shadow: 0 0 2rem #000;
 
     display: flex;
     flex-direction: column;
