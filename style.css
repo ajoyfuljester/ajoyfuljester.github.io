@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--font);
 }
 
 :root {
     --color-1: #8cf;
     --color-2: #eee;
+    --font: 'Varela Round';
 }
 
 body {
@@ -19,14 +23,14 @@ body {
 
 #main {
     background-color: var(--color-2);
-    border-radius: 4rem;
+    border-radius: 2rem;
     box-shadow: 0 0 2rem #000;
 
     display: flex;
     flex-direction: column;
 
-    gap: 2rem;
-    padding: 2rem;
+    gap: 3rem;
+    padding: 3rem;
 }
 
 h1 {
