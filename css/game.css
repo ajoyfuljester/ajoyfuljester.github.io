@@ -1,0 +1,6 @@
+#game {
+    resize: both;
+    width: 40%;
+    aspect-ratio: 16 / 9;
+    background-color: #aaa;
+}
