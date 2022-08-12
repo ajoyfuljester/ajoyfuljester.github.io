@@ -23,14 +23,17 @@ body {
 
 #main {
     background-color: var(--color-2);
-    border-radius: 2rem;
     box-shadow: 0 0 2rem #000;
-
+    
     display: flex;
     flex-direction: column;
-
+    
     gap: 3rem;
     padding: 3rem;
+}
+
+div {
+    border-radius: 2rem;
 }
 
 h1 {
