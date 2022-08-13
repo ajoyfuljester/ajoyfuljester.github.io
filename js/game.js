@@ -8,9 +8,15 @@ let playerX = player.style.left
 let playerY = player.style.bottom
 
 document.onkeydown = (event) => {
-    let previousPosition = parseFloat(playerY.slice(0, -1))
     if (event.code == 'Space') {
-        playerY = `${previousPosition + 10}%`
+        moveEntity(0, 5)
     }
-    player.style.bottom = playerY
+}
+
+function moveEntity(dx, dy, entity = player) {
+    let currentPositionX = parseFloat(entity.style.left.slice(0, -1));
+    let currentPositionY = parseFloat(entity.style.bottom.slice(0, -1));
+
+    entity.style.left = `${currentPositionX + dx}%`
+    entity.style.bottom = `${currentPositionY + dy}%`
 }
