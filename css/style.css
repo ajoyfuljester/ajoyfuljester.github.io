@@ -15,5 +15,12 @@ nav > ul {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+
     font-weight: bold;
+    list-style-type: none;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
 }
