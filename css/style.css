@@ -1,3 +1,7 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,16 +9,39 @@
 }
 
 :root {
+    font-size: 62.5%;
+    font-family: 'Rubik', sans-serif;
 
+    /* VARIABLES */
+    --color-1: #ffc;
+    --color-2: #ff6;
 }
 
+body {
+    font-size: 1.6rem;
+    background-color: var(--color-1);
+}
 
+#menu {
+    box-shadow: 0 0 0.5rem #000;
+    background-color: var(--color-2);
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#menu > div {
+    width: 25%;
+    display: grid;
+    place-items: center;
+}
 
 
 nav > ul {
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
+    width: 75%;
+    padding: 2rem;
 
     font-weight: bold;
     list-style-type: none;
@@ -23,4 +50,9 @@ nav > ul {
 nav a {
     color: #000;
     text-decoration: none;
+    font-size: 2.5rem;
+}
+
+nav a:hover {
+    color: var(--color-1);
 }
