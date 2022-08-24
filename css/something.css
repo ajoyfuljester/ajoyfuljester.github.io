@@ -1,0 +1,30 @@
+body > div {
+    display: flex;
+    height: calc(100% - 6.9rem);
+}
+
+body {
+    height: 0;
+}
+
+body > div > div {
+    flex-grow: 1;
+    transition: 0.5s;
+}
+
+body > div > div:hover {
+    flex-grow: 3;
+    transition: 1s;
+}
+
+#one {
+    background-color: #f00;
+}
+
+#two {
+    background-color: #0f0;
+}
+
+#three {
+    background-color: #00f;
+}
