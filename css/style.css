@@ -13,8 +13,8 @@
     font-family: 'Rubik', sans-serif;
 
     /* VARIABLES */
-    --color-1: #ffc;
-    --color-2: #ff6;
+    --color-1: #aee;
+    --color-2: #6ff;
 }
 
 body {
@@ -55,5 +55,6 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--color-1);
+    text-decoration-line: underline;
+    text-decoration-thickness: 0.1em;
 }
