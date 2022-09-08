@@ -1,19 +1,20 @@
-function jumpscare() {
-    let jumpscare = document.createElement('div')
-    jumpscare.onfullscreenchange = () => {
-        if (document.fullscreenElement === null) {
-            jumpscare.remove()
-        }
-    }
+let jumpscareElement = document.createElement('div')
+jumpscareElement.classList.add('jumpscare')
 
-    jumpscare.classList.add('jumpscare')
-    document.body.appendChild(jumpscare)
-    jumpscare.requestFullscreen()
+jumpscareElement.onfullscreenchange = () => {
+    if (document.fullscreenElement === null) {
+        jumpscareElement.remove()
+    }
+}
+
+function jumpscare() {
+    document.body.appendChild(jumpscareElement)
+    jumpscareElement.requestFullscreen()
     let sound = new Audio('/html/jumpscare/jumpscare.mp3')
     sound.play();
     
     setTimeout(() => {
-        document.exitFullscreen()
+        jumpscareElement.onfullscreenchange()
     }, 3000)
     
 }
