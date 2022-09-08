@@ -14,8 +14,6 @@ function jumpscare() {
     sound.play();
     
     setTimeout(() => {
-        console.log('exiting fullscreen after 3 seconds')
-        console.log(jumpscareElement.onfullscreenchange.toString())
         if (document.fullscreenElement !== null) {
             document.exitFullscreen()
         }
