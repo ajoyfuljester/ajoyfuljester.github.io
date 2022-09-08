@@ -27,11 +27,12 @@ body {
 }
 
 #menu {
-    box-shadow: 0 0 0.5rem #000;
     background-color: var(--color-2);
-
+    
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 #menu > div {
@@ -46,7 +47,7 @@ nav > ul {
     justify-content: space-evenly;
     width: 75%;
     padding: 2rem;
-
+    
     font-weight: bold;
     list-style-type: none;
 }
@@ -64,4 +65,11 @@ nav a:hover {
 
 body > div {
     flex-grow: 1;
+    flex-shrink: 0;
+}
+
+body > iframe {
+    border: none;
+    height: 7rem;
+    box-shadow: 0 0 0.5rem #000;
 }

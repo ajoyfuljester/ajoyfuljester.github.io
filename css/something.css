@@ -1,6 +1,7 @@
 body > div {
     display: flex;
-    height: calc(100% - 6.9rem);
+    /* height: calc(100% - 6.9rem); */
+    height: 100%;
 }
 
 body {
