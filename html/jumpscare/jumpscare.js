@@ -13,4 +13,4 @@ function jumpscare() {
     
 }
 
-document.querySelector('body').onclick = jumpscare
+document.querySelector('body > div').onclick = jumpscare

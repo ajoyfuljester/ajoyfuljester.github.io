@@ -21,6 +21,9 @@ body {
     font-size: 1.6rem;
     background-color: var(--color-1);
     min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
 }
 
 #menu {
@@ -57,4 +60,8 @@ nav a {
 nav a:hover {
     text-decoration-line: underline;
     text-decoration-thickness: 0.1em;
+}
+
+body > div {
+    flex-grow: 1;
 }
