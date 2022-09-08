@@ -3,10 +3,14 @@ function jumpscare() {
     jumpscare.classList.add('jumpscare')
     document.body.appendChild(jumpscare)
     jumpscare.requestFullscreen()
-    let sound = new Audio('/jumpscare.mp3')
-    sound.play()
+    let sound = new Audio('/html/jumpscare/jumpscare.mp3')
+    sound.play();
     
-    setTimeout(() => {
+    setTimeout(async () => {
+        await document.exitFullscreen()
         jumpscare.remove()
     }, 3000)
+    
 }
+
+document.querySelector('body').onclick = jumpscare
