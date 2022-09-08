@@ -31,7 +31,7 @@ body > div > div {
 
 .red > div {
     transform-origin: left bottom;
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
 }
 
 .green > div {
