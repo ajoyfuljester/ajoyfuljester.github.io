@@ -1,0 +1,291 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --hue: 215;
+    --saturation: 80%;
+    --brightness: 60%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#jester {
+    aspect-ratio: 16 / 9;
+    position: relative;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+@media screen and (min-aspect-ratio: 16 / 9) {
+    #jester {
+        height: 100vh;
+    }
+}
+
+@media screen and (max-aspect-ratio: 16 / 9) {
+    #jester {
+        width: 100vw;
+    }
+}
+
+
+
+.shard {
+    position: absolute;
+    clip-path: polygon(var(--point-one), var(--point-two), var(--point-three));
+    --point-center: var(--point-centerX, 50%) var(--point-centerY, 50%);
+    transform-origin: var(--point-center);
+    background-color: hsl(var(--hue), var(--saturation), var(--brightness));
+}
+
+.shard-piece {
+    position: absolute;
+    inset: 0;
+    background-color: hsl(var(--hue), var(--saturation), var(--brightness));
+}
+
+.shard-4-sided {
+    clip-path: polygon(var(--point-one), var(--point-two), var(--point-three), var(--point-four));
+}
+
+.shard-piece:nth-child(1) {
+    clip-path: polygon(var(--point-center), var(--point-one), var(--point-two));
+}
+
+.shard-piece:nth-child(2) {
+    clip-path: polygon(var(--point-center), var(--point-two), var(--point-three));
+}
+
+.shard-piece:nth-child(3) {
+    clip-path: polygon(var(--point-center), var(--point-three), var(--point-one));
+}
+
+.shard-4-sided > .shard-piece:nth-child(3) {
+    clip-path: polygon(var(--point-center), var(--point-three), var(--point-four));
+}
+
+.shard-4-sided > .shard-piece:nth-child(4) {
+    clip-path: polygon(var(--point-center), var(--point-four), var(--point-one));
+}
+
+.color1 {
+    filter: brightness(1.1);
+}
+
+.color2 {
+    filter: brightness(1);
+}
+
+.color3 {
+    filter: brightness(0.9);
+}
+
+.color4 {
+    filter: brightness(0.8);
+}
+
+#s1 {
+    inset: 53% 40% 8% 32%;
+
+    --point-one: 10% 0;
+    --point-two: 100% 99%;
+    --point-three: 0 100%;
+
+    --point-centerX: 25%;
+    --point-centerY: 70%;
+
+    --shard-rotation: 0deg;
+}
+
+#s2 {
+    inset: 40.5% 40% 14% 28%;
+
+    --point-one: 0 0;
+    --point-two: 100% 30%;
+    --point-three: 98.5% 100%;
+
+    --point-centerX: 60%;
+    --point-centerY: 40%;
+
+    --shard-rotation: 0deg;
+}
+
+#s3 {
+    inset: 15% 52% 56% 21%;
+
+    --point-one: 61% 0;
+    --point-two: 100% 100%;
+    --point-three: 0 70%;
+
+    --point-centerX: 45%;
+    --point-centerY: 50%;
+
+    --shard-rotation: 0deg;
+}
+
+#s4 {
+    inset: 11% 66% 64% 8%;
+
+    --point-one: 30% 12%;
+    --point-two: 0 100%;
+    --point-three: 49% 85%;
+    --point-four: 100% 0%;
+
+    --point-centerX: 25%;
+    --point-centerY: 70%;
+
+    --shard-rotation: 0deg;
+}
+
+#s5 {
+    inset: 38% 81% 41% 7%;
+
+    --point-one: 0% 9%;
+    --point-two: 100% 0;
+    --point-three: 9% 100%;
+
+    --point-centerX: 25%;
+    --point-centerY: 40%;
+
+    --shard-rotation: 0deg;
+}
+
+#s6 {
+    inset: 62% 87.5% 28% 4%;
+
+    --point-one: 51% 0;
+    --point-two: 100% 100%;
+    --point-three: 0 100%;
+
+    --point-centerX: 54%;
+    --point-centerY: 49%;
+
+    --shard-rotation: 0deg;
+}
+
+#s7 {
+    inset: 18% 26% 47.5% 49.5%;
+
+    --point-one: 30% 0;
+    --point-two: 100% 29%;
+    --point-three: 42% 100%;
+    --point-four: 0% 84%;
+
+    --point-centerX: 30%;
+    --point-centerY: 50%;
+
+    --shard-rotation: 0deg;
+}
+
+#s8 {
+    inset: 9% 7% 65% 59%;
+
+    --point-one: 53% 0;
+    --point-two: 100% 100%;
+    --point-three: 0 29%;
+
+    --point-centerX: 35%;
+    --point-centerY: 35%;
+
+    --shard-rotation: 0deg;
+}
+
+#s9 {
+    inset: 31% 6% 39% 80%;
+
+    --point-one: 0% 0;
+    --point-two: 100% 30%;
+    --point-three: 97% 100%;
+    --point-four: 11% 49%;
+
+    --point-centerX: 60%;
+    --point-centerY: 55%;
+
+    --shard-rotation: 0deg;
+}
+
+#s10 {
+    inset: 58% 3.5% 23% 85%;
+
+    --point-one: 35% 0;
+    --point-two: 100% 50%;
+    --point-three: 48% 100%;
+    --point-four: 0 51%;
+
+    --point-centerX: 30%;
+    --point-centerY: 60%;
+
+    --shard-rotation: 0deg;
+}
+
+.shard:active {
+    animation: shard-animation 2s linear forwards;
+    z-index: 100;
+}
+
+.shard:active > .shard-piece {
+    animation: shard-piece-animation 1s forwards;
+    transform-origin: center;
+}
+
+.shard:active > .shard-piece:nth-child(1) {
+    --new-path: polygon(var(--point-center), -100% -100%, 200% -100%);
+}
+
+.shard:active > .shard-piece:nth-child(2) {
+    --new-path: polygon(var(--point-center), 200% -100%, 50% 200%);
+}
+
+.shard:active > .shard-piece:nth-child(3) {
+    --new-path: polygon(var(--point-center), 50% 200%, -100% -100%);
+}
+
+.shard-4-sided:active > .shard-piece:nth-child(1) {
+    --new-path: polygon(var(--point-center), -100% 50%, 50% -100%);
+}
+
+.shard-4-sided:active > .shard-piece:nth-child(2) {
+    --new-path: polygon(var(--point-center), 50% -100%, 200% 50%);
+}
+
+.shard-4-sided:active > .shard-piece:nth-child(3) {
+    --new-path: polygon(var(--point-center), 200% 50%, 50% 200%);
+}
+
+.shard-4-sided:active > .shard-piece:nth-child(4) {
+    --new-path: polygon(var(--point-center), 50% 200%, -100% 50%);
+}
+
+
+/* @keyframes shard-animation {
+    50% {
+        scale: 10;
+    }
+
+    40% {
+        inset: 0;
+    }
+    100% {
+        position: fixed;
+        inset: 0;
+        clip-path: polygon(-100% 0, 200% 0, 50% 200%);
+    }
+} */
+
+/* @keyframes shard-piece-animation {
+    0%, 100% {
+        clip-path: var(--new-path);
+    }
+    
+
+    100% {
+        filter: brightness(1);
+        clip-path: polygon(-100% 0, 200% 0, 50% 200%);
+    }
+} */
