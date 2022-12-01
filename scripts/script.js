@@ -1,9 +1,6 @@
 document.querySelectorAll('.shard').forEach((shard) => {
-    shard.onclick = playBellSound;
+    shard.onclick = () => {
+        let bellSound = new Audio(`/media/sounds/bell_${shard.id.slice(1)}.mp3`);
+        bellSound.play()
+    };
 })
-
-function playBellSound() {
-    let bellSound = new Audio('/media/sounds/bell.mp3');
-    console.log(bellSound.volume = 1)
-    bellSound.play()
-}

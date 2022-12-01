@@ -6,13 +6,14 @@
 
 :root {
     --hue: 215;
-    --saturation: 80%;
-    --brightness: 60%;
+    --saturation: 60%;
+    --brightness: 50%;
 }
 
 body {
     display: flex;
     justify-content: center;
+    background-color: #eed;
 }
 
 #jester {
@@ -20,6 +21,7 @@ body {
     position: relative;
     max-width: 100vw;
     max-height: 100vh;
+    filter: drop-shadow(1.5vmin 1.5vmin 1vmin #0006);
 }
 
 @media screen and (min-aspect-ratio: 16 / 9) {
@@ -42,6 +44,28 @@ body {
     --point-center: var(--point-centerX, 50%) var(--point-centerY, 50%);
     transform-origin: var(--point-center);
     background-color: hsl(var(--hue), var(--saturation), var(--brightness));
+}
+
+.shard::after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(-70deg, transparent 9%, #fff5 10%, transparent 11%);
+    background-size: 1000% 1000%;
+    background-position: 100% 100%;
+    position: absolute;
+    animation: shine 6s var(--shine-delay) infinite;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
 }
 
 .shard-piece {
@@ -75,11 +99,11 @@ body {
 }
 
 .color1 {
-    filter: brightness(1.1);
+    filter: brightness(1.2);
 }
 
 .color2 {
-    filter: brightness(1);
+    filter: brightness(1.1);
 }
 
 .color3 {
@@ -91,72 +115,6 @@ body {
 }
 
 #s1 {
-    inset: 53% 40% 8% 32%;
-
-    --point-one: 10% 0;
-    --point-two: 100% 99%;
-    --point-three: 0 100%;
-
-    --point-centerX: 25%;
-    --point-centerY: 70%;
-
-    --shard-rotation: 0deg;
-}
-
-#s2 {
-    inset: 40.5% 40% 14% 28%;
-
-    --point-one: 0 0;
-    --point-two: 100% 30%;
-    --point-three: 98.5% 100%;
-
-    --point-centerX: 60%;
-    --point-centerY: 40%;
-
-    --shard-rotation: 0deg;
-}
-
-#s3 {
-    inset: 15% 52% 56% 21%;
-
-    --point-one: 61% 0;
-    --point-two: 100% 100%;
-    --point-three: 0 70%;
-
-    --point-centerX: 45%;
-    --point-centerY: 50%;
-
-    --shard-rotation: 0deg;
-}
-
-#s4 {
-    inset: 11% 66% 64% 8%;
-
-    --point-one: 30% 12%;
-    --point-two: 0 100%;
-    --point-three: 49% 85%;
-    --point-four: 100% 0%;
-
-    --point-centerX: 25%;
-    --point-centerY: 70%;
-
-    --shard-rotation: 0deg;
-}
-
-#s5 {
-    inset: 38% 81% 41% 7%;
-
-    --point-one: 0% 9%;
-    --point-two: 100% 0;
-    --point-three: 9% 100%;
-
-    --point-centerX: 25%;
-    --point-centerY: 40%;
-
-    --shard-rotation: 0deg;
-}
-
-#s6 {
     inset: 62% 87.5% 28% 4%;
 
     --point-one: 51% 0;
@@ -166,7 +124,73 @@ body {
     --point-centerX: 54%;
     --point-centerY: 49%;
 
-    --shard-rotation: 0deg;
+    --shine-delay: 0s;
+}
+
+#s2 {
+    inset: 38% 81% 41% 7%;
+    
+    --point-one: 0% 9%;
+    --point-two: 100% 0;
+    --point-three: 9% 100%;
+    
+    --point-centerX: 25%;
+    --point-centerY: 40%;
+    
+    --shine-delay: 4.8s;
+}
+
+#s3 {
+    inset: 11% 66% 64% 8%;
+    
+    --point-one: 30% 12%;
+    --point-two: 0 100%;
+    --point-three: 49% 85%;
+    --point-four: 100% 0%;
+
+    --point-centerX: 25%;
+    --point-centerY: 70%;
+    
+    --shine-delay: 3.4s;
+}
+
+#s4 {
+    inset: 15% 52% 56% 21%;
+
+    --point-one: 61% 0;
+    --point-two: 100% 100%;
+    --point-three: 0 70%;
+
+    --point-centerX: 45%;
+    --point-centerY: 50%;
+    
+    --shine-delay: 1.5s;
+}
+
+#s5 {
+    inset: 40.5% 40% 14% 28%;
+
+    --point-one: 0 0;
+    --point-two: 100% 30%;
+    --point-three: 98.5% 100%;
+
+    --point-centerX: 60%;
+    --point-centerY: 40%;
+    
+    --shine-delay: 1.1s;
+}
+
+#s6 {
+    inset: 53% 40% 8% 32%;
+
+    --point-one: 10% 0;
+    --point-two: 100% 99%;
+    --point-three: 0 100%;
+
+    --point-centerX: 25%;
+    --point-centerY: 70%;
+    
+    --shine-delay: 2.7s;
 }
 
 #s7 {
@@ -179,8 +203,8 @@ body {
 
     --point-centerX: 30%;
     --point-centerY: 50%;
-
-    --shard-rotation: 0deg;
+    
+    --shine-delay: 1.9s;
 }
 
 #s8 {
@@ -192,8 +216,8 @@ body {
 
     --point-centerX: 35%;
     --point-centerY: 35%;
-
-    --shard-rotation: 0deg;
+    
+    --shine-delay: 4.4s;
 }
 
 #s9 {
@@ -206,8 +230,8 @@ body {
 
     --point-centerX: 60%;
     --point-centerY: 55%;
-
-    --shard-rotation: 0deg;
+    
+    --shine-delay: 5.2s;
 }
 
 #s10 {
@@ -220,8 +244,8 @@ body {
 
     --point-centerX: 30%;
     --point-centerY: 60%;
-
-    --shard-rotation: 0deg;
+    
+    --shine-delay: 0s;
 }
 
 .shard:active {
