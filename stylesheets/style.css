@@ -22,6 +22,7 @@ body {
     max-width: 100vw;
     max-height: 100vh;
     filter: drop-shadow(1.5vmin 1.5vmin 1vmin #0006);
+    transition: 3s;
 }
 
 @media screen and (min-aspect-ratio: 16 / 9) {
@@ -52,15 +53,15 @@ body {
     height: 100%;
     width: 100%;
     background-image: linear-gradient(-70deg, transparent 9%, #fff5 10%, transparent 11%);
-    background-size: 1000% 1000%;
-    background-position: 100% 100%;
+    background-size: 400% 400%;
+    /* background-position: 300% 300%; */
     position: absolute;
     animation: shine 6s var(--shine-delay) infinite;
 }
 
 @keyframes shine {
     0% {
-        background-position: 100% 100%;
+        background-position: 200% 160%;
     }
 
     100% {
@@ -68,10 +69,26 @@ body {
     }
 }
 
+.shard > iframe {
+    border: none;
+    inset: 0;
+    position: fixed;
+    z-index: 1;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+}
+
+.shard:hover > .shard-piece {
+    background-color: transparent;
+}
+
 .shard-piece {
     position: absolute;
     inset: 0;
     background-color: hsl(var(--hue), var(--saturation), var(--brightness));
+    transition: 1s;
+    z-index: 5;
 }
 
 .shard-4-sided {
@@ -247,69 +264,3 @@ body {
     
     --shine-delay: 0s;
 }
-
-.shard:active {
-    animation: shard-animation 2s linear forwards;
-    z-index: 100;
-}
-
-.shard:active > .shard-piece {
-    animation: shard-piece-animation 1s forwards;
-    transform-origin: center;
-}
-
-.shard:active > .shard-piece:nth-child(1) {
-    --new-path: polygon(var(--point-center), -100% -100%, 200% -100%);
-}
-
-.shard:active > .shard-piece:nth-child(2) {
-    --new-path: polygon(var(--point-center), 200% -100%, 50% 200%);
-}
-
-.shard:active > .shard-piece:nth-child(3) {
-    --new-path: polygon(var(--point-center), 50% 200%, -100% -100%);
-}
-
-.shard-4-sided:active > .shard-piece:nth-child(1) {
-    --new-path: polygon(var(--point-center), -100% 50%, 50% -100%);
-}
-
-.shard-4-sided:active > .shard-piece:nth-child(2) {
-    --new-path: polygon(var(--point-center), 50% -100%, 200% 50%);
-}
-
-.shard-4-sided:active > .shard-piece:nth-child(3) {
-    --new-path: polygon(var(--point-center), 200% 50%, 50% 200%);
-}
-
-.shard-4-sided:active > .shard-piece:nth-child(4) {
-    --new-path: polygon(var(--point-center), 50% 200%, -100% 50%);
-}
-
-
-/* @keyframes shard-animation {
-    50% {
-        scale: 10;
-    }
-
-    40% {
-        inset: 0;
-    }
-    100% {
-        position: fixed;
-        inset: 0;
-        clip-path: polygon(-100% 0, 200% 0, 50% 200%);
-    }
-} */
-
-/* @keyframes shard-piece-animation {
-    0%, 100% {
-        clip-path: var(--new-path);
-    }
-    
-
-    100% {
-        filter: brightness(1);
-        clip-path: polygon(-100% 0, 200% 0, 50% 200%);
-    }
-} */
